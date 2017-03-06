@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @my_thread.title %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.text %></td>
+        <td><%= link_to 'Edit', edit_my_thread_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', [@my_thread, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Comment', new_my_thread_comment_path(@my_thread) %> |
+<%= link_to 'Edit', edit_my_thread_path(@my_thread) %> |
+<%= link_to 'Back', my_threads_path %>

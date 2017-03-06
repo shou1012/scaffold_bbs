@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>My thread:</strong>
+  <%= @comment.my_thread %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @comment.text %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @comment.string %>
+</p>
+
+<%= link_to 'Edit', edit_my_thread_comment_path(@my_thread, @comment) %> |
+<%= link_to 'Back', my_thread_comments_path %>
