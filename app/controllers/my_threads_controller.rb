@@ -65,7 +65,7 @@ class MyThreadsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_my_thread
-      @my_thread = MyThread.where(:title => params[:id]).first
+      @my_thread = MyThread.where(:id => params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
