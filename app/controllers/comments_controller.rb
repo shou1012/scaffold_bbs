@@ -66,7 +66,7 @@ class CommentsController < ApplicationController
   private
 
     def set_my_thread
-      @my_thread = MyThread.where(:title => params[:my_thread_id]).first
+      @my_thread = MyThread.where(:id => params[:my_thread_id]).first
     end
 
     # Use callbacks to share common setup or constraints between actions.
