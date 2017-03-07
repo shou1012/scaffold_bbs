@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = @my_thread.comments
   end
 
   # GET /comments/1
@@ -66,12 +65,12 @@ class CommentsController < ApplicationController
   private
 
     def set_my_thread
-      @my_thread = MyThread.where(:id => params[:my_thread_id]).first
+      @my_thread = MyThread.find(params[:my_thread_id])
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = @my_thread.comments.where(:id => params[:id]).first
+      @comment = Comment.find(params[:id].to_i)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

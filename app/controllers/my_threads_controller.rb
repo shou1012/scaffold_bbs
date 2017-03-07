@@ -10,8 +10,7 @@ class MyThreadsController < ApplicationController
   # GET /my_threads/1
   # GET /my_threads/1.json
   def show
-    @comments = @my_thread.comments
-  end
+    end
 
   # GET /my_threads/new
   def new
@@ -65,7 +64,7 @@ class MyThreadsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_my_thread
-      @my_thread = MyThread.where(:id => params[:id]).first
+      @my_thread = MyThread.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
