@@ -3,4 +3,4 @@
 <%= render 'form', comment: @comment %>
 
 <%= link_to 'Show', my_thread_comment_path([@my_thread, @comment]) %> |
-<%= link_to 'Back', my_thread_comments_path %>
+<%= link_to 'Back', my_thread_path(@my_thread) %>
