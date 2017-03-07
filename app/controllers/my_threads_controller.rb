@@ -10,7 +10,7 @@ class MyThreadsController < ApplicationController
   # GET /my_threads/1
   # GET /my_threads/1.json
   def show
-    end
+  end
 
   # GET /my_threads/new
   def new
